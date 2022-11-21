@@ -2,6 +2,7 @@ import { registriesCollection } from "../database/db.js"
 
 export default async function addRegistries(req, res){
     const {value, description, type, date} = req.body;
+    const userId = req.userId;
 
     let newValue = value;
     if(type==="outflow"){
@@ -10,6 +11,7 @@ export default async function addRegistries(req, res){
 
     try {
         await registriesCollection.insertOne({
+            userId,
             value: Number(newValue),
             description,
             type,
