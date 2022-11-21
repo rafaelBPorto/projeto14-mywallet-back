@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 import { sessionsCollection } from "../database/db.js";
 import { registriesSchema } from "../models/registries.models.js";
 
