@@ -3,9 +3,14 @@ import { registriesCollection } from "../database/db.js"
 export default async function addRegistries(req, res){
     const {value, description, type, date} = req.body;
 
+    let newValue = value;
+    if(type==="outflow"){
+        newValue = value*(-1)
+    }
+
     try {
         await registriesCollection.insertOne({
-            value,
+            value: Number(newValue),
             description,
             type,
             date
