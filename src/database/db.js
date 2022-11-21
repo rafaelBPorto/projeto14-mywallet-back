@@ -14,3 +14,4 @@ try {
 const db = mongoClinte.db("MyWallet");
 export const usersCollection = db.collection("users");
 export const sessionsCollection = db.collection("sessions");
+export const registriesCollection = db.collection("registries");
