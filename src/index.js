@@ -11,5 +11,5 @@ app.use(cors());
 app.use(usersRouter);
 app.use(registriesRouter);
 
-
-app.listen(process.env.PORT, () => console.log(`Server in running in port ${process.env.PORT}`))
+const port = process.env.PORT || 5000
+app.listen(port, () => console.log(`Server in running in port ${port}`))
